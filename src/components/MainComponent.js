@@ -5,16 +5,17 @@ import DishDetail from './DishdetailComponent'
 import { DISHES } from '../shared/dishes'
 
 class Main extends React.Component {
+
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       dishes: DISHES,
       selectedDish: null
-    }
+    };
   }
 
   onDishSelect(dishId) {
-    this.seSatte({ selectedDish: dishId })
+    this.setState({ selectedDish: dishId});
   }
 
   render() {
