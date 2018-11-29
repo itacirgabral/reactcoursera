@@ -38,7 +38,7 @@ class Dishdetail extends React.Component {
           {this.renderDish(this.props.selectedDish)}
         </div>
         <div id="dishComments" className="col-xs-12 col-sm-12 col-md-5 m1">
-          stGroupItemText<ListGroup>
+          <ListGroup>
             {this.renderComments(this.props.selectedDish.comments)}
           </ListGroup>
         </div>
