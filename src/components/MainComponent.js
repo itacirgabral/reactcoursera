@@ -34,11 +34,17 @@ class Main extends React.Component {
           leader={this.state.leaders.find((leader) => leader.featured)}
         />
 
+        const DishWithId = ({match:{params:{dishId: id}}}) => <DishDetail
+        dish={this.state.dishes.find(e => e.id == id)} 
+        comments={this.state.comments.find(e => e.dishId == id)} 
+      />
+
     return <>
       <Header />
       <Switch>
         <Route path="/home" component={HomePage}/>
         <Route exact path="/menu" component={() => <Menu dishes={this.state.dishes} />}/>
+        <Route path="/menu/:dishId" component={DishWithId} />
         <Route exact path="/contactus" component={Contact} />
         <Redirect to="/home" />
       </Switch>
